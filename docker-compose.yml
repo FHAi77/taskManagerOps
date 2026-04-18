@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  task-manager:
+    build: .
+    container_name: task-manager-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tasks.db:/app/tasks.db
+    restart: unless-stopped
